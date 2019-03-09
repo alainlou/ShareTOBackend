@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://its-me:3swIdco20JREimML@hacklassonde-roeli.gcp.mongodb.net/test?retryWrites=true
