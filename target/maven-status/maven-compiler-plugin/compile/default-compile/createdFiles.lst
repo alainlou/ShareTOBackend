@@ -1,1 +1,5 @@
 com\lou\alain\HackLassondeBackend\HackLassondeBackendApplication.class
+com\lou\alain\HackLassondeBackend\ItemRepository.class
+model\Item.class
+com\lou\alain\HackLassondeBackend\ItemController.class
+com\lou\alain\HackLassondeBackend\ItemAccessor.class
