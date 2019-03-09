@@ -15,5 +15,9 @@ public class ItemAccessor {
 	public List<Item> findAll() {
 		return itemRepo.findAll();
 	}
+	
+	public void save(Item item) {
+		itemRepo.save(item);
+	}
 
 }
