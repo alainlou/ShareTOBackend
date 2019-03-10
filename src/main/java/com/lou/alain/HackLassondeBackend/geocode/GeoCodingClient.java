@@ -16,9 +16,10 @@ public class GeoCodingClient {
 	@Value("${apiKey}")
 	private String apiKey;
 	
-	private GeoApiContext context = new GeoApiContext.Builder().apiKey(apiKey).build();
+	//private GeoApiContext context = new GeoApiContext.Builder().apiKey(apiKey).build();
 			
 	public LatLng getLatLng(String address) throws ApiException, InterruptedException, IOException {
+		GeoApiContext context = new GeoApiContext.Builder().apiKey(apiKey).build();
 		GeocodingResult [] results = GeocodingApi.geocode(context, address).await();
 		return results[0].geometry.location;
 	}

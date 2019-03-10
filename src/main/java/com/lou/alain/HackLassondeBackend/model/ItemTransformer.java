@@ -21,6 +21,7 @@ public class ItemTransformer {
 		item.setContent(basicItem.getContent());
 		item.setId(basicItem.getId());
 		item.setTitle(basicItem.getTitle());
+		item.setAddress(basicItem.getAddress());
 		
 		// location from google geolocation api
 		LatLng latLng = geoCodingClient.getLatLng(basicItem.getAddress());

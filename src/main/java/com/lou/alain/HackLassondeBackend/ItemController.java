@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +24,11 @@ public class ItemController {
 	
 	private ItemAccessor itemAccessor;
 	private ItemTransformer itemTransformer;
+	
+	@GetMapping("/items/{searchString}")
+	public List<Item> getItemByTitle(@PathVariable(value="searchString") String str){
+		return itemAccessor.findByTitle(str);
+	}
 	
 	@GetMapping("/items")
 	public List<Item> getAllItems(){
