@@ -18,10 +18,7 @@ public class Item {
 	@Getter
 	@Setter
 	private String title;
-	
-	@Getter
-	@Setter
-	private String type;
+
 	
 	@Getter
 	@Setter
@@ -29,15 +26,11 @@ public class Item {
 	
 	@Getter
 	@Setter
-	private String img;
-	
-	@Getter
-	@Setter
 	private String contact;
 	
 	@Getter
 	@Setter
-	private String location;
+	private String address;
 	
 	@Getter
 	@Setter
@@ -46,8 +39,4 @@ public class Item {
 	@Getter
 	@Setter
 	private String lng;
-	
-	@Getter
-	@Setter
-	private boolean available;
 }

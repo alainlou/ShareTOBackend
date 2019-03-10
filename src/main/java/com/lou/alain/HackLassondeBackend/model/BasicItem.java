@@ -17,15 +17,7 @@ public class BasicItem {
 	
 	@Getter
 	@Setter
-	private String type;
-	
-	@Getter
-	@Setter
 	private String content;
-	
-	@Getter
-	@Setter
-	private String img;
 	
 	@Getter
 	@Setter
@@ -33,9 +25,5 @@ public class BasicItem {
 	
 	@Getter
 	@Setter
-	private String location;
-	
-	@Getter
-	@Setter
-	private boolean available;
+	private String address;
 }

@@ -17,17 +17,13 @@ public class ItemTransformer {
 	
 	public Item transform(BasicItem basicItem) throws ApiException, InterruptedException, IOException {
 		Item item = new Item();
-		item.setAvailable(basicItem.isAvailable());
 		item.setContact(basicItem.getContact());
 		item.setContent(basicItem.getContent());
 		item.setId(basicItem.getId());
-		item.setImg(basicItem.getImg());
-		item.setLocation(basicItem.getLocation());
 		item.setTitle(basicItem.getTitle());
-		item.setType(basicItem.getType());
 		
 		// location from google geolocation api
-		LatLng latLng = geoCodingClient.getLatLng(basicItem.getLocation());
+		LatLng latLng = geoCodingClient.getLatLng(basicItem.getAddress());
 		
 		// set lat and long
 		item.setLat(String.valueOf(latLng.lat));
