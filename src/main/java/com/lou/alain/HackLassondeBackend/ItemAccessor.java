@@ -4,8 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.lou.alain.HackLassondeBackend.model.Item;
+
 import lombok.AllArgsConstructor;
-import model.Item;
 
 @AllArgsConstructor
 @Service
