@@ -3,11 +3,11 @@ package com.lou.alain.HackLassondeBackend;
 import java.io.IOException;
 import java.util.List;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.maps.errors.ApiException;
@@ -19,14 +19,14 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @RestController
-@CrossOrigin(origins="*")
+@RequestMapping("/api")
 public class ItemController {
 	
-	private ItemAccessor itemAccessor;
+	private ItemDAO itemAccessor;
 	private ItemTransformer itemTransformer;
 	
-	@GetMapping("/items/{searchString}")
-	public List<Item> getItemByTitle(@PathVariable(value="searchString") String str){
+	@GetMapping("/items/{title}")
+	public List<Item> getItemByTitle(@PathVariable(value="title") String str){
 		return itemAccessor.findByTitle(str);
 	}
 	
@@ -35,7 +35,7 @@ public class ItemController {
 		return itemAccessor.findAll();
 	}
 	
-	@PostMapping("/post-item")
+	@PostMapping("/items")
 	public void pushItem(@RequestBody BasicItem basicItem) throws ApiException, InterruptedException, IOException {
 		itemAccessor.save(itemTransformer.transform(basicItem));
 	}

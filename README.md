@@ -8,4 +8,4 @@ A Java Spring Boot backend service using Google's GeoCoding API to translate add
 | ----------- | ---- | ------------ |
 | `GET` | /items | Gets all items in the database
 | `GET` | /items/{title} | Gets all items that fuzzy-match to the path variable `title`
-| `POST` | /post-item | Creates an item in the DB from a SimpleItem (no latlng) - taken from request body
+| `POST` | /items | Creates an item in the DB from a SimpleItem (no latlng) - taken from request body
